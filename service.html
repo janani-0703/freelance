@@ -21,73 +21,43 @@
 
     <div class="menu-toggle" id="menu-toggle">☰</div>
   </nav>
-  <section class="services" id="services">
-  <h2>Our Services</h2>
-  <p class="services-sub">
-    We provide complete project solutions for students and startups with quality and affordability.
-  </p>
+<section class="services" id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">Choose what you need, we build it professionally</p>
 
-  <div class="services-container">
+  <div class="service-container">
 
-   <a 
-      <h3>Web Development</h3>
-      <p>Modern, responsive and professional websites using latest technologies.</p>
+    <!-- Website Service -->
+    <div class="service-card">
+      <div class="icon">🌐</div>
+      <h3>Website Development</h3>
+      <p>Business websites, portfolios, landing pages and company sites.</p>
+      <a href="package.html?type=web" class="service-btn">
+        View Website Packages →
+      </a>
     </div>
 
-    <div class="service-card" onclick="goToPricing('software')">
+    <!-- Software Service -->
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <h3>Software Development</h3>
+      <p>Custom software, management systems, desktop & web apps.</p>
+      <a href="package.html?type=software" class="service-btn">
+        View Software Packages →
+      </a>
+    </div>
+
+    <!-- Final Year Project -->
+    <div class="service-card">
+      <div class="icon">🎓</div>
       <h3>Final Year Projects</h3>
-      <p>Complete academic projects with documentation, explanation and support.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>UI / UX Design</h3>
-      <p>Clean and user-friendly interface design for web and mobile apps.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Bug Fixing</h3>
-      <p>Fix errors, improve performance and optimize your existing projects.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Hosting & Deployment</h3>
-      <p>Website hosting setup and live deployment on GitHub, Netlify, or server.</p>
-    </div>
-
-    <div class="service-card" onclick="goToPricing('finalyear')">
-      <h3>Project Guidance</h3>
-      <p>Full guidance for students from idea selection to project completion.</p>
+      <p>Final year projects with report, PPT and full explanation.</p>
+      <a href="package.html?type=finalyear" class="service-btn">
+        View Project Packages →
+      </a>
     </div>
 
   </div>
 </section>
-<script>
-function goToPricing(type){
-  // Pricing section-ku scroll aagum
-  document.getElementById("pricing").scrollIntoView({behavior:"smooth"});
-
-  // Small delay so scroll mudinjathuku apram tab open aagum
-  setTimeout(()=>{
-    document.querySelectorAll('.pricing-container').forEach(c=>{
-      c.classList.remove('active');
-    });
-    document.querySelectorAll('.tab-btn').forEach(b=>{
-      b.classList.remove('active');
-    });
-
-    document.getElementById(type).classList.add('active');
-
-    if(type === "web"){
-      document.querySelectorAll('.tab-btn')[0].classList.add('active');
-    }
-    else if(type === "software"){
-      document.querySelectorAll('.tab-btn')[1].classList.add('active');
-    }
-    else if(type === "finalyear"){
-      document.querySelectorAll('.tab-btn')[2].classList.add('active');
-    }
-  },500);
-}
-</script>
-  </body>
+    </body>
   </html>

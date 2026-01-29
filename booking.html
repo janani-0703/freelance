@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Your Package - Team Code</title>
+<link rel="stylesheet" href="index.css">
+<style>
+  body { background:#111; color:#fff; font-family: sans-serif; padding:40px; }
+  h2 { text-align:center; background:linear-gradient(to right,#00f5ff,#38ef7d); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:30px; font-size:36px;}
+  
+  form {
+    max-width:500px; margin:auto;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:12px;
+    backdrop-filter: blur(15px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.5);
+  }
+
+  input, textarea {
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    font-size:16px;
+  }
+
+  input[readonly] { background:rgba(255,255,255,0.1); color:#00f5ff; font-weight:600; }
+
+  button {
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:25px;
+    font-weight:600;
+    font-size:16px;
+    cursor:pointer;
+    background:linear-gradient(to right,#00f5ff,#38ef7d);
+    color:#000;
+    transition:0.3s;
+  }
+
+  button:hover { transform:scale(1.05); box-shadow:0 6px 15px #25d366; }
+
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Team Code</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="package.html">Packages</a></li>
+      <li><a href="cont.html">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </nav>
+    
+
+<h2>Book Your Package</h2>
+
+<form onsubmit="sendWhatsApp(event)">
+  <input type="text" id="pkgName" readonly placeholder="Package Name">
+  <input type="text" id="pkgPrice" readonly placeholder="Price">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="tel" id="phone" placeholder="Your Phone" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <textarea id="message" placeholder="Your Requirements"></textarea>
+  <button type="submit">Send to WhatsApp</button>
+</form>
+
+<script>
+  // Fill package & price from URL
+  window.onload = function(){
+    const params = new URLSearchParams(window.location.search);
+    const pkg = params.get("pkg");
+    const price = params.get("price");
+    if(pkg) document.getElementById("pkgName").value = pkg;
+    if(price) document.getElementById("pkgPrice").value = price;
+  }
+
+  function sendWhatsApp(e){
+    e.preventDefault();
+    let pkg=document.getElementById("pkgName").value;
+    let price=document.getElementById("pkgPrice").value;
+    let name=document.getElementById("name").value;
+    let phone=document.getElementById("phone").value;
+    let email=document.getElementById("email").value;
+    let msg=document.getElementById("message").value;
+
+    let text = `New Package Booking\n${pkg}\n${price}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${msg}`;
+
+    let url = "https://wa.me/9842105890?text=" + encodeURIComponent(text);
+    window.open(url,"_blank");
+  }
+</script>
+
+</body>
+</html>

@@ -21,22 +21,126 @@
 
     <div class="menu-toggle" id="menu-toggle">☰</div>
   </nav>
-  <section class="home" id="home">
-    
-  <div class="particles">
-    <span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Code</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- Particles Background -->
+<div id="particles-js"></div>
+
+<!-- Molecules -->
+<div class="molecules">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>We Build Projects & Websites</h1>
+  <p>That Grow Your Future</p>
+  <a href="cont.html" class="hero-btn">Get a Project</a>
+</section>
+
+<!-- COUNTER -->
+<section class="counter">
+  <div class="counter-box">
+    <h2>Fresh</h2>
+    <p>Startup Team</p>
   </div>
+  <div class="counter-box">
+    <h2>100%</h2>
+    <p>Dedication</p>
+  </div>
+  <div class="counter-box">
+    <h2>Quality</h2>
+    <p>Assured Work</p>
+  </div>
+</section>
+<section class="home-slider">
+  <h2>Why Choose Team Code</h2>
+
+  <div class="slide-box">
+    <div class="slide active">
+      🚀 We transform your ideas into powerful digital solutions.
+    </div>
+    <div class="slide">
+      💡 Creative design and clean code in every project.
+    </div>
+    <div class="slide">
+      🎯 Focused on quality and client satisfaction.
+    </div>
+    <div class="slide">
+      🛠 Reliable support from start to finish.
+    </div>
+    <div class="slide">
+      🌐 Your trusted partner for digital success.
+    </div>
+  </div>
+
+  <div class="dots">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
+    <span class="dot" onclick="showSlide(3)"></span>
+    <span class="dot" onclick="showSlide(4)"></span>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    color: { value: "#38bdf8" },
+    line_linked: { enable: true, color: "#38bdf8" },
+    move: { speed: 1.5 }
+  }
+});
+</script>
+<script>
+function showSlide(index){
+  let slides = document.querySelectorAll(".slide");
+  let dots = document.querySelectorAll(".dot");
+
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
+}
+</script>
+<section class="quick-contact">
+  <h2>Have a Project in Mind?</h2>
+  <p>Let’s turn your idea into a professional website or software.</p>
+
+  <div class="contact-buttons">
+    <a href="cont.html" class="btn btn-form">
+      📝 Contact Form
+    </a>
+
+    <a href="tel:+919894596141" class="btn btn-call">
+      📞 Call Now
+    </a>
+
+    <a href="https://wa.me/919894596141?text=Hi%20I%20need%20a%20project" target="_blank" class="btn btn-whatsapp">
+      💬 WhatsApp Us
+    </a>
+  </div>
+</section>
+</body>
+</html>
+    
   
-  <div class="home-content">
-    <h1>We Build Projects & Websites That Grow Your Future</h1>
-    <p>
-      We help students and startups build high-quality projects and
-      professional websites at affordable prices with full guidance.
-    </p>
-
-   </section>
-
   <script src="index.js"></script>
 </body>
 </html>
